@@ -3,7 +3,7 @@
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
 Helm's [documentation](https://helm.sh/docs) to get started.
 Once Helm has been set up correctly, add the repo as follows:
-  helm repo add woodhc https://wood9205.github.io/helm-charts
+  helm repo add woodhc https://github.com/wood9205/helm-charts
 If you had already added this repo earlier, run `helm repo update` to retrieve
 the latest versions of the packages.  You can then run `helm search repo
 woodhc` to see the charts.
