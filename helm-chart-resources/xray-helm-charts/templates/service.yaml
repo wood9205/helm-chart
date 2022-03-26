@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "xray.fullname" . }}
+  labels:
+    {{- include "xray.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  {{- if .Values.service.externalip.enabled }}
+  externalIPs:
+    {{ .Values.service.externalIP.ip}}
+  {{- end }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+      name: {{ .Values.service.name }}
+  selector:
+    {{- include "xray.selectorLabels" . | nindent 4 }}
